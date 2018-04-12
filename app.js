@@ -17,7 +17,7 @@ function createAlert(alert){
 
 function determineNotification(a){
   if (a){
-    alertNote = "I am an annoying pop-up notification!";
+    alertNote = "You have a new notification!";
     return alertNote
   }else{
     alertNote = "Hi! Welcome to YourApp™. The only place to see your things all in one place! *Hint* Click to close me."
@@ -28,14 +28,14 @@ determineNotification();
 createAlert(alertNote)
 
 note.addEventListener("click", function(){
-  notice.remove();
-  note.style.transition = "opacity 0s"
+  note.style.transition = "opacity 2s"
   note.style.opacity = 0;
   setTimeout(function () {
       note.style.display = "none";
+      notice.remove();
   }, 500);
-  // determineNotification(true);
-  // setTimeout(function () {
-  //   createAlert(alertNote)
-  // }, 1000);
+  determineNotification(true);
+  setTimeout(function () {
+    createAlert(alertNote)
+  }, 5000);
 });

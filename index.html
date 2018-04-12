@@ -2,8 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile | FEWD TechDegree Project</title>
   </head>
   <body>
@@ -28,14 +29,15 @@
         <input type="text" name="" value="">
       </section>
       <div class="trafficGraph">
-        <p>I am a trafficGraph</p>
-        <p>Make me a line graph</p>
+        <canvas id="traffic"></canvas>
       </div>
       <div class="trafficLine">
+        <h3>Daily Traffic</h3>
+        <canvas id="week"></canvas>
       </div>
       <div class="mobileUsers">
-        <p>I am a mobile users</p>
-        <p>make me a pie chart</p>
+        <h3>Mobile Users</h3>
+      <canvas id="pie"></canvas>
       </div>
       <div class="socialStats">
         <div class="socialCounter">

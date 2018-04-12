@@ -1,45 +1,94 @@
-const trafficGraph = d3.select(".trafficGraph");
-const trafficLine = d3.select(".trafficLine");
-const mobileUsers = d3.select(".mobileUsers");
-const socialStats = d3.select(".socialStats");
-const newMembers = d3.select(".newMembers");
-const recentActivity = d3.select(".recentActivity");
-const settings = d3.select(".settings");
-
-
-// trafficLine.selectAll("div")
-//     .data(data)
-//     .enter().append("div")
-//     .style("height", function(d) { return d * 10 + "px"; })
-//     .text(function(d) { return d; })
-//     .style("color", "white")
-//     .style("width", "40px")
-//     .style("margin", "10px")
-//     .style("text-align", "center")
-//     .style("background-color", "#8764B8");;
-
-
-var visitors = [
-  {visits: 50, day: 'Monday'},
-  {visits: 38, day: 'Tuesday'},
-  {visits: 47, day: 'Wednesday'},
-  {visits: 59, day: 'Thursday'},
-  {visits: 30, day: 'Friday'},
-  {visits: 80, day: 'Saturday'},
-  {visits: 13, day: 'Sunday'},
-];
-
-var day = visitors.map(function(t) {
-  return t.day
+var trafficLine = document.getElementById("week");
+var week = new Chart(trafficLine, {
+    type: 'bar',
+    data: {
+        labels: ["S", "M", "T", "W", "T", "F", "S"],
+        datasets: [{
+            data: [40, 130, 200, 150, 250, 230, 120, 300],
+            backgroundColor: [
+              '#7377BF',
+              '#7377BF',
+              '#7377BF',
+              '#7377BF',
+              '#7377BF',
+              '#7377BF',
+              '#7377BF'
+            ],
+            borderWidth: 0
+        }]
+    },
+    options: {
+        tooltips: {
+            mode: 'index'
+        },
+        cornerRadius : 20,
+        legend: {
+          display: false,
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
 });
 
-const margin = {top: 5, right: 5, bottom: 50, left: 50};
-const fullWidth = 200;
-const fullHeight = 250;
-const width = fullWidth - margin.right - margin.left;
-const height = fullHeight - margin.top - margin.bottom;
-const svg = trafficLine.append('svg')
-  .attr('width', fullWidth)
-  .attr('height', fullHeight)
-  .append('g')
-  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+var mobileDonut = document.getElementById("pie");
+var mobileUsers = new Chart(mobileDonut, {
+    type: 'doughnut',
+    data: {
+        labels: [
+        'Phones',
+        'Tablets',
+        'Desktop'
+        ],
+        datasets: [{
+            data: [15, 15, 70],
+            backgroundColor: [
+              '#73B1BF',
+              '#81C98F',
+              '#7377BF'
+            ]}
+          ]},
+    options: {
+      legend : {
+        position: "right",
+      }
+    }
+});
+
+var traffic = document.getElementById("traffic");
+var myLineChart = new Chart(traffic, {
+    type: 'line',
+          data: {
+            datasets: [
+              {
+              data: [700, 1300, 1000, 1500, 1700, 2000, 1300, 1500, 1000, 1500, 1200, 2500],
+              borderColor : "#7377BF",
+              backgroundColor : "#E2E3F6",
+              borderWidth : "2",
+              pointBorderWidth : "4",
+              pointRadius : 5,
+            }],
+        labels: ['16-22', '23-29', '30-5', '6-12',"13-19", '20-26', '27-3', "4-10","11-17", "18-24","25-31"],
+
+    },
+
+    options: {
+      elements: {
+            line: {
+                tension: 0, // disables bezier curves
+            }
+        },
+        legend: {
+          display : false
+        },
+        plugins: {
+           filler: {
+               propagate: true
+           }
+       }
+  }}
+);

@@ -38,7 +38,7 @@ p{
 }
 main{
   margin: 10px auto 10px;
-  width: 90%;
+  width: 100%;
 }
 @media (min-width: 768px){
   body{
@@ -53,13 +53,25 @@ main{
     grid-column-start: 2;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    max-width: 1000px;
   }
   .socialStats{
     display: grid;
     grid-template-columns: repeat(3, minmax(150px, 300px));
     justify-content: center;
     grid-gap: 20px;
+  }
+  .trafficLine{
+    padding: 10px;
+    padding-left: 50px;
+  }
+  .mobileUsers{
+    padding: 10px;
+    padding-right: 50px;
+  }
+  .trafficGraph{
+    grid-column: span 4;
+    padding: 10px 50px;
   }
 }
 
@@ -72,10 +84,7 @@ input{
   margin: auto;
   margin-right: 10px;
 }
-svg{
-  display: block;
-  margin: auto;
-}
+
 .notification{
   border-radius: 5px;
   opacity: 0;
@@ -95,24 +104,23 @@ svg{
   right: 0;
 }
 .trafficGraph{
-  height: 300px;
   grid-column: span 4;
-  border: solid black 1px;
-  padding: 10px;
 }
 .trafficLine{
-  border: solid black 1px;
+  margin: 0;
+  border: solid lightgray 1px;
+  border-left: 0px;
   grid-column: span 2;
-  display: flex;
 }
 .mobileUsers{
-  height: 300px;
-  border: solid black 1px;
+  margin: 0;
+  border: solid lightgray 1px;
+  border-left: 0px;
+  border-right: 0px;
   grid-column: span 2;
-  padding: 10px;
+
 }
 .socialStats{
-  border: solid black 1px;
   grid-column: span 4;
   padding: 10px;
 }
