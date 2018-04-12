@@ -1,0 +1,147 @@
+*{
+  box-sizing: border-box;
+  font-family: lato;
+}
+body{
+  margin: 0;
+}
+
+aside{
+  padding: 15px;
+  background-color: #8E44AD;
+  height: 100%;
+  display: none;
+}
+header{
+  grid-column-start: 1;
+  grid-column-end: -1;
+  background-color: #9B59B6;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 50px 50px auto;
+  /* grid-template-rows: 20px; */
+  padding: 10px;
+  color: white;
+}
+h1,
+p{
+  margin: auto 0;
+}
+.notification-items{
+  margin: auto;
+  padding: 2px;
+  height: 100%;
+}
+
+.profile-img{
+  border-radius: 50%;
+}
+main{
+  margin: 10px auto 10px;
+  width: 90%;
+}
+@media (min-width: 768px){
+  body{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+  }
+  aside{
+    display: grid;
+    grid-template-rows: repeat(4, 60px);
+  }
+  main{
+    grid-column-start: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  .socialStats{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(150px, 300px));
+    justify-content: center;
+    grid-gap: 20px;
+  }
+}
+
+section{
+  display: flex;
+  grid-column: span 4;
+}
+input{
+  height: 30px;
+  margin: auto;
+  margin-right: 10px;
+}
+svg{
+  display: block;
+  margin: auto;
+}
+.notification{
+  border-radius: 5px;
+  opacity: 0;
+  display: none;
+  background-color: #8764B8;
+  grid-column: span 4;
+  padding: 15px;
+  color: white;
+  position: relative;
+}
+.close{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  padding-top: 5px;
+  top: 0;
+  right: 0;
+}
+.trafficGraph{
+  height: 300px;
+  grid-column: span 4;
+  border: solid black 1px;
+  padding: 10px;
+}
+.trafficLine{
+  border: solid black 1px;
+  grid-column: span 2;
+  display: flex;
+}
+.mobileUsers{
+  height: 300px;
+  border: solid black 1px;
+  grid-column: span 2;
+  padding: 10px;
+}
+.socialStats{
+  border: solid black 1px;
+  grid-column: span 4;
+  padding: 10px;
+}
+.socialCounter{
+  height: 125px;
+  width: 100%;
+  padding: 10px;
+  margin: 20px auto;
+  background-color: lightgray;
+  border-radius: 5px;
+  text-align: center;
+}
+.newMembers{
+  border: solid black 1px;
+  grid-column: span 2;
+  padding: 10px;
+  grid-row: span 2;
+  min-height: 200px;
+
+}
+.recentActivity{
+  height: 300px;
+  border: solid black 1px;
+  grid-column: span 2;
+  padding: 10px;
+}
+.settings{
+  height: 300px;
+  border: solid black 1px;
+  grid-column: span 2;
+  padding: 10px;
+}
