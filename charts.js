@@ -1,3 +1,5 @@
+
+
 var trafficLine = document.getElementById("week");
 var week = new Chart(trafficLine, {
     type: 'bar',
@@ -21,6 +23,7 @@ var week = new Chart(trafficLine, {
         tooltips: {
             mode: 'index'
         },
+        maintainAspectRatio: false,
         cornerRadius : 20,
         legend: {
           display: false,
@@ -53,6 +56,7 @@ var mobileUsers = new Chart(mobileDonut, {
             ]}
           ]},
     options: {
+      maintainAspectRatio: false,
       legend : {
         position: "right",
       }
@@ -77,6 +81,7 @@ var myLineChart = new Chart(traffic, {
     },
 
     options: {
+      maintainAspectRatio: false,
       elements: {
             line: {
                 tension: 0, // disables bezier curves

@@ -35,7 +35,4 @@ note.addEventListener("click", function(){
       notice.remove();
   }, 500);
   determineNotification(true);
-  setTimeout(function () {
-    createAlert(alertNote)
-  }, 5000);
 });
